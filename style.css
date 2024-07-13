@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    --gray-magenta: hsl(303, 10%, 53%);
+    --gray-magenta-light: hsl(300, 24%, 96%);
+
+    --ff: "League Spartan", sans-serif;
+}
+
+html {
+    font-family: var(--ff);
+}
+
+
+.description {
+    color: var(--dark-magenta);
+    margin-inline: 100px;
+    display: grid;
+    gap: 2rem;
+}
+
+.description > p {
+    color: var(--gray-magenta);
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    width: 450px
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.layout-rating {
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+}
+
+
+.rating {
+    display: grid;
+    gap: 1rem;
+    padding: 20px;
+    background-color: var(--gray-magenta-light);
+    max-width: 450px;
+    border-radius: .5rem;
+    color: var(--dark-magenta);
+}
+
+.layout-grid {
+    margin-inline: 200px;
+    display: grid;
+    align-items: center;
+    gap: 2rem;
+    padding: 20px;
+    height: 450px;
+}
+
+.layout-grid > * {
+    flex: 1;
+}
+
+.card{
+    display: grid;  
+    gap: 2rem;
+    background: var(--dark-magenta);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.card > p {
+    color: var(--gray-magenta-light);
+    line-height: 1.5rem;
+    margin-block: auto;
+    padding-inline: 10px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.card-header img {
+    border-radius: 50%;
+    scale: 0.85;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.card-header h5 {
+    font-weight: 400;
+    color: var(--soft-pink);
+}
+
+.card:first-child{
+    margin-top: -50px;
+}
+
+.card:last-child {
+    margin-top: 50px;
+}
+
+.detail {
+    display: grid;
+    gap: 5px;
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+@media (min-width: 800px) {
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+        margin-block: 50px;
+    }
+
+    .rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+
+    .layout-grid {
+        display: flex
+    }
+
+    .rating:nth-child(1) {
+        transform: translateX(-50px);
+    }
+    
+    .rating:nth-child(3) {
+        transform: translateX(50px);
+    }
+}
